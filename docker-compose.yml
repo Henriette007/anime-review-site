@@ -1,0 +1,17 @@
+services:
+  anime-db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: anime_review_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: temp-password
+    ports:
+      - "5432:5432"
+    container_name: anime_review_db
+
+volumes:
+  db:
+    driver: local
+
+
